@@ -9,11 +9,11 @@ all: $(PROGS)
 
 .PHONY: clean-%
 clean-%:
-	rm -f $@
+	rm -f $*
 
 .PHONY: fclean-%
 fclean-%:
-	rm -rf $@ $@.o $@.dSYM
+	rm -rf $* $*.o $*.dSYM
 
 .PHONY: re-%
 re-%: fclean-% %
