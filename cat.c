@@ -48,3 +48,4 @@ int	main(int argc, char **argv)
 		do_cat(argv[i++]);
 	return (0);
 }
+
