@@ -18,8 +18,21 @@ int	main(int argc, char **argv)
 			exit(1);
 		}
 		while((c = fgetc(fp)) != EOF)
+		{
+			if (c == '\n')
+				if (putchar('$') < 0)
+					exit(1);
+			if (c == '\t')
+			{
+				if (putchar('\\') < 0)
+					exit(1);
+				if (putchar('t') < 0)
+					exit(1);
+				continue ;
+			}
 			if (putchar(c) < 0)
 				exit(1);
+		}
 		fclose(fp);
 		i++;
 	}
