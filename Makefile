@@ -4,20 +4,22 @@ CFLAGS = -Wall -Wextra -Werror -g
 .PHONY: all
 all: $(PROGS)
 
+.PHONY: %
 %: %.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 .PHONY: clean-%
 clean-%:
-	rm -f $*
+	$(RM) $*
 
 .PHONY: fclean-%
 fclean-%:
-	rm -rf $* $*.o $*.dSYM
+	$(RM) -r $* $*.o $*.dSYM
 
 .PHONY: re-%
-re-%: fclean-% %
-	
+re-%: fclean-%
+	make $*
+
 .PHONY: clean
 clean:
 	rm -f $(PROGS)
