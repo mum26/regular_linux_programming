@@ -1,4 +1,4 @@
-PROGS = cat cat2
+PROGS = cat cat2 head
 CFLAGS = -Wall -Wextra -Werror -g
 
 .PHONY: all
