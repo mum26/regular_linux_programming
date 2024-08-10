@@ -6,7 +6,7 @@ static void	do_grep(regex_t *pat, FILE *src)
 
 	while (fgets(buf, sizeof(buf), src))
 	{
-		if (regexec(pat, buf, 0 NULL, 0) == 0)
+		if (regexec(pat, buf, 0, NULL, 0) == 0)
 			fputs(buf, stdout);
 	}
 	return ;
