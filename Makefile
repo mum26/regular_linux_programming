@@ -1,4 +1,4 @@
-PROGS = cat cat2 head
+PROGS = cat cat2 head grep
 CFLAGS = -Wall -Wextra -Werror -g
 
 .PHONY: all
